@@ -1,0 +1,76 @@
+(gdb) b main
+Breakpoint 1 at 0x80d: file p3original.c, line 21.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p3original.c:21
+21  {
+(gdb) n
+23    input(&n);
+(gdb) s
+input (n=0x7ffeb750ec00) at p3original.c:5
+5     printf("enter the last natural number to sum \n");
+(gdb) n
+enter the last natural number to sum 
+6     scanf("%d", &*n);
+(gdb) n
+7
+7   }
+(gdb) n
+main () at p3original.c:24
+24    SUM=add(n);
+(gdb) s
+add (n=7) at p3original.c:10
+10    int i, sum=0;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+12      sum=n*(n+1)/2;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+12      sum=n*(n+1)/2;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+12      sum=n*(n+1)/2;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+12      sum=n*(n+1)/2;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+12      sum=n*(n+1)/2;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+12      sum=n*(n+1)/2;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+12      sum=n*(n+1)/2;
+(gdb) n
+11    for(i=0;i<n;i++){
+(gdb) n
+14    return sum;
+(gdb) n
+15  }
+(gdb) print sum
+$1 = 28
+(gdb) n
+main () at p3original.c:25
+25    output(n,SUM);
+(gdb) s
+output (n=7, value=28) at p3original.c:18
+18    printf("sum of first %d natural numbers is %d", n,value);
+(gdb) n
+19  }
+(gdb) print value
+$2 = 28
+(gdb) n
+main () at p3original.c:26
+26    return 0;
+(gdb) n
+27  }(gdb)
