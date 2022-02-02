@@ -30,6 +30,6 @@ int main()
   int y=input();
   int z=input();
   int comp=compare(x,y,z);
-  output(x,y,z,comp);
+  output(x,y,z,comp);    
   return 0;
 }
