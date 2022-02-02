@@ -1,0 +1,87 @@
+(gdb) b main
+Breakpoint 1 at 0x833: file p2original.c, line 29.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p2original.c:29
+warning: Source file is more recent than executable.
+29    int x=input();
+(gdb) s
+input () at p2original.c:4
+4   {
+(gdb) n
+6     printf("enter the numbers \n");
+(gdb) n
+enter the numbers 
+7     scanf("%d", &n);
+(gdb) n
+22
+8     return n;
+(gdb) n
+9   }
+(gdb) print n
+$1 = 22
+(gdb) n
+main () at p2original.c:30
+30    int y=input();
+(gdb) s
+input () at p2original.c:4
+4   {
+(gdb) n
+6     printf("enter the numbers \n");
+(gdb) n
+enter the numbers 
+7     scanf("%d", &n);
+(gdb) n
+45
+8     return n;
+(gdb) n
+9   }
+(gdb) print n
+$2 = 45
+(gdb) n
+main () at p2original.c:31
+31    int z=input();
+(gdb) s
+input () at p2original.c:4
+4   {
+(gdb) n
+6     printf("enter the numbers \n");
+(gdb) n
+enter the numbers 
+7     scanf("%d", &n);
+(gdb) n
+67
+8     return n;
+(gdb) n
+9   }
+(gdb) print n
+$3 = 67
+(gdb) n
+main () at p2original.c:32
+32    int comp=compare(x,y,z);
+(gdb) s
+compare (a=22, b=45, c=67) at p2original.c:12
+12    if(a>b && a>c){
+(gdb) n
+15    else if(b>c)
+(gdb) n
+20      return c;
+(gdb) n
+22  }
+(gdb) n
+main () at p2original.c:33
+33    output(x,y,z,comp);
+(gdb) s
+output (a=22, b=45, c=67, value=67) at p2original.c:25
+25    printf("from %d, %d and %d, the greatest number is %d", a,b,c,value);
+(gdb) n
+26  }
+(gdb) print value
+$4 = 67
+(gdb) n
+main () at p2original.c:34
+34    return 0;
+(gdb) n
+35  }(gdb)
