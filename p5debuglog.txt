@@ -1,0 +1,93 @@
+(gdb) b main
+Breakpoint 1 at 0x8bb: file p5original.c, line 28.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p5original.c:28
+28    x=input();
+(gdb) s
+input () at p5original.c:4
+4     {
+(gdb) n
+6       printf("enter the number to find the square root for \n");
+(gdb) n
+enter the number to find the square root for 
+7       scanf("%f", &n);
+(gdb) n
+36
+8       return n;
+(gdb) n
+9     }
+(gdb) print n
+$1 = 36
+(gdb) n
+main () at p5original.c:29
+29    y=square_root(x);
+(gdb) s
+square_root (n=36) at p5original.c:11
+11  {
+(gdb) n
+13    printf("enter a random number (lesser than %.1f)",n);
+(gdb) n
+14    scanf("%f",&p);
+(gdb) n
+enter a random number (lesser than 36.0)3
+15    for(i=0;i<p;i++){
+(gdb) n
+16      root=(p+n/p)/2;
+(gdb) n
+17      p=root;
+(gdb) n
+15    for(i=0;i<p;i++){
+(gdb) n
+16      root=(p+n/p)/2;
+(gdb) n
+17      p=root;
+(gdb) n
+15    for(i=0;i<p;i++){
+(gdb) n
+16      root=(p+n/p)/2;
+(gdb) n
+17      p=root;
+(gdb) n
+15    for(i=0;i<p;i++){
+(gdb) n
+16      root=(p+n/p)/2;
+(gdb) n
+17      p=root;
+(gdb) n
+15    for(i=0;i<p;i++){
+(gdb) n
+16      root=(p+n/p)/2;
+(gdb) n
+17      p=root;
+(gdb) n
+15    for(i=0;i<p;i++){
+(gdb) n
+16      root=(p+n/p)/2;
+(gdb) n
+17      p=root;
+(gdb) n
+15    for(i=0;i<p;i++){
+(gdb) n
+19    return root;
+(gdb) n
+20  }
+(gdb) print root
+$2 = 6
+(gdb) n
+main () at p5original.c:30
+30    output(x,y);
+(gdb) s
+output (n=36, value=6) at p5original.c:23
+23    printf("square root of %.2f is :  %.2f",n,value);
+(gdb) n
+24  }
+(gdb) print value
+$3 = 6
+(gdb) n
+main () at p5original.c:31
+31    return 0;
+(gdb) n
+32  }(gdb) 
