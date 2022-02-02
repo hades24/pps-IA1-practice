@@ -46,7 +46,7 @@ $4 = 4
 (gdb) n
 main () at p10final.c:34
 34      result = add(n1,n2);
-(gdb) s
+(gdb) s      
 add (n1=..., n2=...) at p10final.c:21
 21      sum.real= n1.real + n2.real;
 (gdb) n
