@@ -1,0 +1,73 @@
+(gdb) b main
+Breakpoint 1 at 0x84e: file p10final.c, line 32.
+(gdb) r
+Starting program: /home/runner/pps-test1-hades24-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p10final.c:32
+32      n_complex n1=input();
+(gdb) s
+input () at p10final.c:12
+12  {
+(gdb) n
+14      printf("enter the real and imaginary part \n");
+(gdb) n
+enter the real and imaginary part 
+15      scanf("%f%f", &comp.real, &comp.imaginary);
+(gdb) n
+2 3
+16      return comp;
+(gdb) n
+17  }
+(gdb) print comp.real
+$1 = 2
+(gdb) print comp.imaginary
+$2 = 3
+(gdb) n
+main () at p10final.c:33
+33      n_complex n2=input();
+(gdb) s
+input () at p10final.c:12
+12  {
+(gdb) n
+14      printf("enter the real and imaginary part \n");
+(gdb) n
+enter the real and imaginary part 
+15      scanf("%f%f", &comp.real, &comp.imaginary);
+(gdb) n
+3 4
+16      return comp;
+(gdb) n
+17  }
+(gdb) print comp.real
+$3 = 3
+(gdb) print comp.imaginary
+$4 = 4
+(gdb) n
+main () at p10final.c:34
+34      result = add(n1,n2);
+(gdb) s
+add (n1=..., n2=...) at p10final.c:21
+21      sum.real= n1.real + n2.real;
+(gdb) n
+22      sum.imaginary= n1.imaginary + n2.imaginary;
+(gdb) n
+23      return sum;
+(gdb) n
+24  }
+(gdb) print sum
+$5 = {real = 5, imaginary = 7}
+(gdb) n
+main () at p10final.c:35
+35      output(result);
+(gdb) s
+output (result=...) at p10final.c:27
+27      printf("SUM = %.1f + %.1fi", result.real, result.imaginary);
+(gdb) n
+28  }
+(gdb) f
+#0  output (result=...) at p10final.c:28
+28  }
+(gdb) n
+main () at p10final.c:36
+36  }
