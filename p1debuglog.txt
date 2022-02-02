@@ -1,0 +1,70 @@
+(gdb) b main
+Breakpoint 1 at 0x80b: file p1original.c, line 22.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p1original.c:22
+22    int x=input();
+(gdb) s
+input () at p1original.c:4
+4   {
+(gdb) n
+6     printf("enter the number \n");
+(gdb) n
+enter the number 
+7     scanf("%d", &n);
+(gdb) n
+42
+8     return n;
+(gdb) n
+9   }
+(gdb) print n
+$1 = 42
+(gdb) n
+main () at p1original.c:23
+23    int y=input();
+(gdb) s
+input () at p1original.c:4
+4   {
+(gdb) n
+6     printf("enter the number \n");
+(gdb) n
+enter the number 
+7     scanf("%d", &n);
+(gdb) n
+23
+8     return n;
+(gdb) n
+9   }
+(gdb) print n
+$2 = 23
+(gdb) n
+main () at p1original.c:24
+24    int Q=add(x,y);
+(gdb) s
+add (a=42, b=23) at p1original.c:12
+12    int sum=0;
+(gdb) n
+13    sum=a+b;
+(gdb) n
+14    return sum;
+(gdb) n
+15  }
+(gdb) print sum
+$3 = 65
+(gdb) n
+main () at p1original.c:25
+25    output(Q);
+(gdb) s
+output (value=65) at p1original.c:18
+18    printf("SUM IS %d", value);
+(gdb) n
+19  }
+(gdb) print value
+$4 = 65
+(gdb) n
+main () at p1original.c:26
+26    return 0;
+(gdb) n
+27  }(gdb) 
