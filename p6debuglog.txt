@@ -1,0 +1,61 @@
+(gdb) b main
+Breakpoint 1 at 0x8b9: file p6original.c, line 29.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p6original.c:29
+29  {
+(gdb) n
+32    input_strings(a,b);
+(gdb) s
+input_strings (a=0x7fffb8eaf420 "\210\364\352\270\377\177", 
+    b=0x7fffb8eaf440 "@\273\252\026\361\177") at p6original.c:5
+5     printf("enter first word \n");
+(gdb) n
+enter first word 
+6     scanf("%s", a);
+(gdb) n
+hell
+7     printf("enter second word \n");
+(gdb) n
+enter second word 
+8     scanf("%s", b);
+(gdb) n
+hello
+9   }
+(gdb) print a
+$1 = 0x7fffb8eaf420 "hell"
+(gdb) print b
+$2 = 0x7fffb8eaf440 "hello"
+(gdb) n
+main () at p6original.c:33
+33    result=str_compare(a,b);
+(gdb) s
+str_compare (a=0x7fffb8eaf420 "hell", b=0x7fffb8eaf440 "hello")
+    at p6original.c:13
+13    for(i=0; a[i]!='\0' && a[i]==b[i];i++);
+(gdb) n
+14    return a[i]-b[i];
+(gdb) n
+15  }
+(gdb) n
+main () at p6original.c:34
+34    output(a,b,result);
+(gdb) s
+output (a=0x7fffb8eaf420 "hell", b=0x7fffb8eaf440 "hello", value=-111)
+    at p6original.c:18
+18    if(value==0){
+(gdb) n
+21    else if(value>0){
+(gdb) n
+25      printf("%s is greater than %s",b,a);
+(gdb) n
+27  }
+(gdb) print value
+$3 = -111
+(gdb) n
+main () at p6original.c:35
+35    return 0;
+(gdb) n
+36  }(gdb) 
