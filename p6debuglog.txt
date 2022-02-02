@@ -40,7 +40,7 @@ str_compare (a=0x7fffb8eaf420 "hell", b=0x7fffb8eaf440 "hello")
 (gdb) n
 15  }
 (gdb) n
-main () at p6original.c:34
+main () at p6original.c:34        
 34    output(a,b,result);
 (gdb) s
 output (a=0x7fffb8eaf420 "hell", b=0x7fffb8eaf440 "hello", value=-111)
