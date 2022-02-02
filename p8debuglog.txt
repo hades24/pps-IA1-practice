@@ -1,0 +1,112 @@
+(gdb) b main
+Breakpoint 1 at 0x91c: file p11original.c, line 40.
+(gdb) r
+Starting program: /home/runner/pps-test1-hades24-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p11original.c:40
+40  {
+(gdb) n
+41      int n=0;
+(gdb) n
+42      complex z[n];
+(gdb) n
+43      complex total={0,0};
+(gdb) n
+44      n=get_n();
+(gdb) s
+get_n () at p11original.c:9
+9   {
+(gdb) n
+11      printf("enter number of complex numbers to add \n");
+(gdb) n
+enter number of complex numbers to add 
+12      scanf("%d", &a);
+(gdb) n
+3
+13      return a;
+(gdb) n
+14  }
+(gdb) print a
+$1 = 3
+(gdb) n
+main () at p11original.c:45
+45      input_num(n,z);
+(gdb) s
+input_num (N=3, c=0x7ffefecceef0) at p11original.c:18
+18      for(i=0;i<N;i++)
+(gdb) n
+20          printf("enter the real and imaginary part for %d complex no. \n", i+1);
+(gdb) n
+enter the real and imaginary part for 1 complex no. 
+21          scanf("%f %f",&c[i].real, &c[i].imaginary);
+(gdb) n
+2 3
+18      for(i=0;i<N;i++)
+(gdb) n
+20          printf("enter the real and imaginary part for %d complex no. \n", i+1);
+(gdb) n
+enter the real and imaginary part for 2 complex no. 
+21          scanf("%f %f",&c[i].real, &c[i].imaginary);
+(gdb) n
+3 4
+18      for(i=0;i<N;i++)
+(gdb) n
+20          printf("enter the real and imaginary part for %d complex no. \n", i+1);
+(gdb) n
+enter the real and imaginary part for 3 complex no. 
+21          scanf("%f %f",&c[i].real, &c[i].imaginary);
+(gdb) n
+4 5 
+18      for(i=0;i<N;i++)
+(gdb) n
+23  }
+(gdb) n
+main () at p11original.c:46
+46      add_complex(n,z,&total);
+(gdb) s
+add_complex (N=3, z=0x7ffefecceef0, total=0x7ffefeccef30)
+    at p11original.c:27
+27      total->real=0;
+(gdb) n
+28      total->imaginary=0;
+(gdb) n
+29      for(i=0;i<N;i++)
+(gdb) n
+31          total->real+=z[i].real;
+(gdb) n
+32          total->imaginary+=z[i].imaginary;
+(gdb) n
+29      for(i=0;i<N;i++)
+(gdb) n
+31          total->real+=z[i].real;
+(gdb) n
+32          total->imaginary+=z[i].imaginary;
+(gdb) n
+29      for(i=0;i<N;i++)
+(gdb) n
+31          total->real+=z[i].real;
+(gdb) n
+32          total->imaginary+=z[i].imaginary;
+(gdb) n
+29      for(i=0;i<N;i++)
+(gdb) n
+34  }
+(gdb) n
+main () at p11original.c:47
+47      output_complex(total);
+(gdb) s
+output_complex (total=...) at p11original.c:37
+37      printf("SUM = %.1f + %.1fi",total.real,total.imaginary);
+(gdb) n
+38  }
+(gdb) print total.real
+$2 = 9
+(gdb) print total.imaginary
+$3 = 12
+(gdb) f
+#0  output_complex (total=...) at p11original.c:38
+38  }
+(gdb) n
+main () at p11original.c:48
+48  }
