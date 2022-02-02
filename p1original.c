@@ -21,7 +21,7 @@ int main()
 {
   int x=input();
   int y=input();
-  int Q=add(x,y);
+  int Q=add(x,y);   
   output(Q);
   return 0;
 }
