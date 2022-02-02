@@ -1,0 +1,105 @@
+(gdb) b main
+Breakpoint 1 at 0x8a2: file p4original.c, line 32.
+(gdb) r
+Starting program: /home/runner/pps-IA1-practice/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4original.c:32
+32  {
+(gdb) n
+34    n=input_size();
+(gdb) s
+input_size () at p4original.c:4
+4   {
+(gdb) n
+6     printf("how many numbers to add \n");
+(gdb) n
+how many numbers to add 
+7     scanf("%d", &n);
+(gdb) n
+4
+8     return n;
+(gdb) n
+9   }
+(gdb) print n
+$1 = 4
+(gdb) n
+main () at p4original.c:35
+35    a[n]=input_numbers(a,n);
+(gdb) s
+input_numbers (a=0x7ffe086c7940, n=4) at p4original.c:13
+13    printf("enter the numbers \n");
+(gdb) n
+enter the numbers 
+14    for(i=0;i<n;i++){
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+2
+14    for(i=0;i<n;i++){
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+5
+14    for(i=0;i<n;i++){
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+6
+14    for(i=0;i<n;i++){
+(gdb) n
+15      scanf("%d", &a[i]);
+(gdb) n
+3
+14    for(i=0;i<n;i++){
+(gdb) n
+17    return a[n];
+(gdb) n
+18  }
+(gdb) print a[n]
+$2 = 0
+(gdb) n
+main () at p4original.c:36
+36    SUM=add(a,n);
+(gdb) s
+add (a=0x7ffe086c7940, n=4) at p4original.c:21
+21    int i, sum=0;
+(gdb) n
+22    for(i=0;i<n;i++){
+(gdb) n
+23      sum= sum + a[i];
+(gdb) n
+22    for(i=0;i<n;i++){
+(gdb) n
+23      sum= sum + a[i];
+(gdb) n
+22    for(i=0;i<n;i++){
+(gdb) n
+23      sum= sum + a[i];
+(gdb) n
+22    for(i=0;i<n;i++){
+(gdb) n
+23      sum= sum + a[i];
+(gdb) n
+22    for(i=0;i<n;i++){
+(gdb) n
+25    return sum;
+(gdb) n
+26  }
+(gdb) print sum
+$3 = 16
+(gdb) n
+main () at p4original.c:37
+37    output(SUM);
+(gdb) s
+output (value=16) at p4original.c:29
+29    printf("sum of the given numbers is %d", value);
+(gdb) n
+30  }
+(gdb) print value
+$4 = 16
+(gdb) n
+main () at p4original.c:38
+38    return 0;
+(gdb) n
+39  }(gdb)
