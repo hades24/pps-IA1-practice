@@ -14,7 +14,7 @@ input () at p5original.c:4
 (gdb) n
 enter the number to find the square root for 
 7       scanf("%f", &n);
-(gdb) n
+(gdb) n    
 36
 8       return n;
 (gdb) n
